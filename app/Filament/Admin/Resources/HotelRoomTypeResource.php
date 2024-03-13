@@ -74,6 +74,7 @@ class HotelRoomTypeResource extends Resource
             ->columns([
                 //Tables\Columns\TextColumn::make('id')->sortable()->label('id'),
                 Tables\Columns\TextColumn::make('type')
+                    ->searchable()
                     ->description(function (HotelRoomType $record): string {
                         $description = strip_tags($record->description);
                         return mb_strlen($description) > 80
