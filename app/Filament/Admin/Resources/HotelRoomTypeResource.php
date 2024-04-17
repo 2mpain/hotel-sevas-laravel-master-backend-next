@@ -55,7 +55,7 @@ class HotelRoomTypeResource extends Resource
                     ->schema([
                         Forms\Components\FileUpload::make('image')
                             ->default(function ($model) {
-                                return $model->image;
+                                return $model->image ?? '';
                             })
                             ->uploadingMessage('Загружаем фото лучшего номера...')
                             ->image()
